@@ -1,0 +1,92 @@
+<!--<div class="row animated fadeIn fast">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                
+                <input type="text"
+                        class="form-control"
+                        placeholder="Buscar usuario..."
+                        (keyup)="buscar(txtTermino.value)"
+                        #txtTermino/>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="row animated fadeIn fast">
+    <div class="col-12">
+
+        <div class="card">
+            <div class="card-body">
+                 <h1>Buscar</h1>
+            </div>
+            <div class="card-body">
+                <button class="btn btn-success waves-effect waves-light m-r-10" (click)="buscarPorDispositivo('Linux')">Android</button>
+                <button class="btn btn-success waves-effect waves-light m-r-10" (click)="buscarPorDispositivo('iPad')">iPad</button>
+                <button class="btn btn-success waves-effect waves-light m-r-10" (click)="buscarPorDispositivo('iPhone')">iPhone</button>
+                <button class="btn btn-success waves-effect waves-light m-r-10" (click)="cargarMisUsuarios()">Todos</button>
+            </div>
+        </div>
+    </div>
+</div> 
+
+
+<div class="row animated fadeIn fast" *ngIf="cargando">
+    <div class="col-12">
+        
+        <div class="alert alert-info text-center">
+          <h4 class="alert-heading">Cargando</h4>
+          <i class="fa fa-spin fa-refresh fa-2x"></i>
+          <p class="mb-0">Por favor espere</p>
+        </div>
+
+    </div>
+</div> 
+
+
+<div class="row" *ngIf="!cargando">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Usuarios</h4>
+                <h6 class="card-subtitle">Usuarios registrados en mi aplicación {{usuarios.length}}</h6>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Avatar</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Correo</th>
+                                <th>código</th>
+                                <th>mobil</th>
+                                <th>marca</th>
+                                <th>versionMobil</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let usuario of usuarios">
+                                <td >
+                                    <img style="width:50px; height: 50px;" 
+                                        src="https://www.shareicon.net/data/512x512/2016/05/24/770117_people_512x512.png" alt="Avatar de usuario" class="avatar">
+                                </td>
+                                <td>{{usuario.nombre}}</td>
+                                <td>{{usuario.apellido}}</td>
+                                <td>{{usuario.correo}}</td>
+                                <td>{{usuario.codigo}}</td>
+                                <td>{{usuario.mobil}}</td>
+                                <td>{{usuario.marca}}</td>
+                                <td>{{usuario.versionMobil}}</td>
+
+                            
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
