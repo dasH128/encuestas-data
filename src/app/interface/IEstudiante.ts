@@ -1,6 +1,6 @@
 export interface IEstudiante {
     nombre: String,
-    apellido: String,
+    apellidos: String,
     correo: String,
     codigo: String,
     mobil: String,

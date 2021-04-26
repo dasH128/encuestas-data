@@ -28,7 +28,7 @@ export class UsuariosComponent implements OnInit {
         var data: IEstudiante = e.payload.doc.data();
         return {
           nombre: data.nombre,
-          apellido: data.apellido,
+          apellidos: data.apellidos,
           correo: data.correo,
           codigo: data.codigo,
           marca: data.marca,
@@ -55,7 +55,7 @@ export class UsuariosComponent implements OnInit {
         var data: IEstudiante = e.payload.doc.data();
         return {
           nombre: data.nombre,
-          apellido: data.apellido,
+          apellidos: data.apellidos,
           correo: data.correo,
           codigo: data.codigo,
           marca: data.marca,
